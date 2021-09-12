@@ -2,11 +2,15 @@ package edu.neu.madcourse.numad21fa_sihengwei;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 
 import android.view.View;
+
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
+    // onClick Event of the btn_convert
     public void convertCurrency(View view) {
         EditText dollarText = findViewById(R.id.dollarText);
         TextView textView = findViewById(R.id.textView);
@@ -28,4 +33,16 @@ public class MainActivity extends AppCompatActivity {
             textView.setText(R.string.no_value_string);
         }
     }
+
+    // onClick Event of the btn_about
+    public void displayProfile(View view) {
+
+        Context context = getApplicationContext();
+        CharSequence text = "Siheng Wei\nsiheng.w@northeastern.edu";
+        int duration = Toast.LENGTH_SHORT;
+
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
+    }
+
 }

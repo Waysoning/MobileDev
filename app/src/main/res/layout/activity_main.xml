@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.485" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btn_convert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="108dp"
@@ -52,5 +52,15 @@
         app:layout_constraintVertical_bias="0.466"
         tools:ignore="TextContrastCheck"
         tools:text="" />
+
+    <Button
+        android:id="@+id/btn_about"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="displayProfile"
+        android:text="@string/about_string"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
