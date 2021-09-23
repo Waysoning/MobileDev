@@ -4,4 +4,12 @@
     <string name="dollars_hint">dollars</string>
     <string name="no_value_string">No Value</string>
     <string name="about_string">About</string>
+    <string name="cliky_clicky">Cliky Clicky</string>
+    <string name="a">A</string>
+    <string name="b">B</string>
+    <string name="c">C</string>
+    <string name="d">D</string>
+    <string name="e">E</string>
+    <string name="f">F</string>
+    <string name="pressed">Pressed: -</string>
 </resources>
