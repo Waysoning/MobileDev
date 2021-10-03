@@ -32,22 +32,22 @@ public class ClickyClickyActivity extends AppCompatActivity implements View.OnTo
             case MotionEvent.ACTION_DOWN:
                 switch (view.getId()) {
                     case R.id.btn_A:
-                        tv_showPressed.setText(R.string.a);
+                        tv_showPressed.setText(R.string.pressed_a);
                         break;
                     case R.id.btn_B:
-                        tv_showPressed.setText(R.string.b);
+                        tv_showPressed.setText(R.string.pressed_b);
                         break;
                     case R.id.btn_C:
-                        tv_showPressed.setText(R.string.c);
+                        tv_showPressed.setText(R.string.pressed_c);
                         break;
                     case R.id.btn_D:
-                        tv_showPressed.setText(R.string.d);
+                        tv_showPressed.setText(R.string.pressed_d);
                         break;
                     case R.id.btn_E:
-                        tv_showPressed.setText(R.string.e);
+                        tv_showPressed.setText(R.string.pressed_e);
                         break;
                     case R.id.btn_F:
-                        tv_showPressed.setText(R.string.f);
+                        tv_showPressed.setText(R.string.pressed_f);
                         break;
                 }
                 break;

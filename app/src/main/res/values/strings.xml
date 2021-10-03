@@ -11,5 +11,20 @@
     <string name="d">D</string>
     <string name="e">E</string>
     <string name="f">F</string>
+    <string name="pressed_a">Pressed: A</string>
+    <string name="pressed_b">Pressed: B</string>
+    <string name="pressed_c">Pressed: C</string>
+    <string name="pressed_d">Pressed: D</string>
+    <string name="pressed_e">Pressed: E</string>
+    <string name="pressed_f">Pressed: F</string>
     <string name="pressed">Pressed: -</string>
+    <string name="title_activity_recycler_view">RecyclerViewActivity</string>
+
+    <string name="recyclerview">RecyclerView</string>
+    <string name="addlink">addLink</string>
+    <string name="add_link">Add Link</string>
+    <string name="linkurl">LinkUrl</string>
+    <string name="linkname">LinkName</string>
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
 </resources>

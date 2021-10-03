@@ -7,12 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import android.view.View;
-
-import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
@@ -22,7 +17,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     setContentView(R.layout.activity_main);
   }
 
-  // onClick Event of the btn_convert
+/*
+  onClick Event of the btn_convert
   public void convertCurrency(View view) {
     EditText dollarText = findViewById(R.id.dollarText);
     TextView textView = findViewById(R.id.textView);
@@ -34,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       textView.setText(R.string.no_value_string);
     }
   }
+  */
 
   @SuppressLint("NonConstantResourceId")
   @Override
@@ -45,6 +42,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         break;
       case R.id.btn_clikyCliky:
         startActivity(new Intent(this, ClickyClickyActivity.class));
+        break;
+      case R.id.btn_recyclerView:
+        startActivity(new Intent(this, RecyclerViewActivity.class));
     }
   }
 }

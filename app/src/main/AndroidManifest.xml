@@ -11,6 +11,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NUMAD21FaSihengWei" >
         <activity
+            android:name=".RecyclerViewActivity"
+            android:exported="true" />
+        <activity
             android:name=".ClickyClickyActivity"
             android:exported="true" />
         <activity
