@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/linkname"
+        android:hint="@string/link_name"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:importantForAutofill="no" />
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/linkurl"
+        android:hint="@string/link_url"
         android:inputType="textUri"
         android:minHeight="48dp"
         android:importantForAutofill="no" />

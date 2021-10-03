@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       case R.id.btn_clikyCliky:
         startActivity(new Intent(this, ClickyClickyActivity.class));
         break;
-      case R.id.btn_recyclerView:
+      case R.id.btn_linkCollector:
         startActivity(new Intent(this, RecyclerViewActivity.class));
     }
   }

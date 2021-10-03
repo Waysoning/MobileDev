@@ -20,11 +20,10 @@
     <string name="pressed">Pressed: -</string>
     <string name="title_activity_recycler_view">RecyclerViewActivity</string>
 
-    <string name="recyclerview">RecyclerView</string>
-    <string name="addlink">addLink</string>
     <string name="add_link">Add Link</string>
-    <string name="linkurl">LinkUrl</string>
-    <string name="linkname">LinkName</string>
+    <string name="link_url">LinkUrl</string>
+    <string name="link_name">LinkName</string>
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
+    <string name="link_collector">Link Collector</string>
 </resources>
