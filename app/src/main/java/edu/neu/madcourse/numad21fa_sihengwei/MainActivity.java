@@ -45,6 +45,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         break;
       case R.id.btn_linkCollector:
         startActivity(new Intent(this, RecyclerViewActivity.class));
+        break;
+      case R.id.btn_locator:
+        startActivity(new Intent(this, LocatorActivity.class));
+        break;
     }
   }
 }

@@ -54,7 +54,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     }
 
 
-
+    // Handling Orientation Changes on Android
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
 
