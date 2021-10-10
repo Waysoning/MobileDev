@@ -3,8 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Wayson/AndroidStudioProjects/NUMAD21FaSihengWei/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/Wayson/AndroidStudioProjects/NUMAD21FaSihengWei/app/src/main/res/layout/activity_clicky_clicky.xml" value="0.22" />
+        <entry key="..\:/Users/Wayson/AndroidStudioProjects/NUMAD21FaSihengWei/app/src/main/res/layout/activity_locator.xml" value="0.335" />
+        <entry key="..\:/Users/Wayson/AndroidStudioProjects/NUMAD21FaSihengWei/app/src/main/res/layout/activity_main.xml" value="0.335" />
         <entry key="..\:/Users/Wayson/AndroidStudioProjects/NUMAD21FaSihengWei/app/src/main/res/layout/activity_main2.xml" value="0.2203125" />
+        <entry key="..\:/Users/Wayson/AndroidStudioProjects/NUMAD21FaSihengWei/app/src/main/res/layout/activity_recycler_view.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/Wayson/AndroidStudioProjects/NUMAD21FaSihengWei/app/src/main/res/layout/activity_recycler_view_activiy.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/Wayson/AndroidStudioProjects/NUMAD21FaSihengWei/app/src/main/res/layout/item_link.xml" value="0.165" />
+        <entry key="..\:/Users/Wayson/AndroidStudioProjects/NUMAD21FaSihengWei/app/src/main/res/layout/item_link_add.xml" value="0.26979166666666665" />
       </map>
     </option>
   </component>

@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -43,12 +42,9 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         addButton = findViewById(R.id.fab_addLink);
         //show dialog and add item
-        addItemClickListener = new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                int position = 0;
-                addItem(position);
-            }
+        addItemClickListener = view -> {
+            int position = 0;
+            addItem(position);
         };
         addButton.setOnClickListener(addItemClickListener);
     }
@@ -89,19 +85,16 @@ public class RecyclerViewActivity extends AppCompatActivity {
 
         rviewAdapter = new RviewAdapter(itemLinks);
         ItemLinkClickListener itemLinkClickListener =
-            new ItemLinkClickListener() {
-              @Override
-              public void onItemLinkClick(int position) {
-                ItemLink itemLink = itemLinks.get(position);
-                String linkUrl = itemLink.getLinkUrl();
-                if(!linkUrl.startsWith("http://") && !linkUrl.startsWith("https://")){
-                    linkUrl = "http://" + linkUrl;
-                }
-                Uri uri = Uri.parse(linkUrl);
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-              }
-            };
+                position -> {
+                  ItemLink itemLink = itemLinks.get(position);
+                  String linkUrl = itemLink.getLinkUrl();
+                  if(!linkUrl.startsWith("http://") && !linkUrl.startsWith("https://")){
+                      linkUrl = "http://" + linkUrl;
+                  }
+                  Uri uri = Uri.parse(linkUrl);
+                  Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                  startActivity(intent);
+                };
             rviewAdapter.setOnItemClickListener(itemLinkClickListener);
             recyclerView.setAdapter(rviewAdapter);
             recyclerView.setLayoutManager(rLayoutManager);
@@ -115,28 +108,24 @@ public class RecyclerViewActivity extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(RecyclerViewActivity.this);
         builder.setMessage(R.string.add_link)
                 .setView(dialogView)
-                .setPositiveButton(R.string.confirm, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        EditText et_linkName = dialogView.findViewById(R.id.et_linkName);
-                        EditText et_linkUrl = dialogView.findViewById(R.id.et_linkUrl);
-                        String linkName = et_linkName.getText().toString();
-                        String linkUrl = et_linkUrl.getText().toString();
+                .setPositiveButton(R.string.confirm, (dialog, id) -> {
+                    EditText et_linkName = dialogView.findViewById(R.id.et_linkName);
+                    EditText et_linkUrl = dialogView.findViewById(R.id.et_linkUrl);
+                    String linkName = et_linkName.getText().toString();
+                    String linkUrl = et_linkUrl.getText().toString();
 
-                        if (Patterns.WEB_URL.matcher(linkUrl).matches()) {
-                            itemLinks.add(position, new ItemLink(linkName, linkUrl));
-                            Snackbar.make(recyclerView, "Add an item successfully!", Snackbar.LENGTH_LONG).show();
-                            rviewAdapter.notifyItemInserted(position);
-                        } else {
-                            Snackbar.make(recyclerView, "Invalid Url, Failed to add!", Snackbar.LENGTH_LONG)
-                                    .setAction("Redo", addItemClickListener).show();
-                        }
+                    if (Patterns.WEB_URL.matcher(linkUrl).matches()) {
+                        itemLinks.add(position, new ItemLink(linkName, linkUrl));
+                        Snackbar.make(recyclerView, "Add an item successfully!", Snackbar.LENGTH_LONG).show();
+                        rviewAdapter.notifyItemInserted(position);
+                    } else {
+                        Snackbar.make(recyclerView, "Invalid Url, Failed to add!", Snackbar.LENGTH_LONG)
+                                .setAction("Redo", addItemClickListener).show();
                     }
                 })
-                .setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        // User cancelled the dialog
+                .setNegativeButton(R.string.cancel, (dialog, id) -> {
+                    // User cancelled the dialog
 
-                    }
                 });
         builder.create().show();
 
