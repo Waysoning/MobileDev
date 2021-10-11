@@ -9,9 +9,13 @@ import android.Manifest;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.location.Location;
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import java.util.List;
 
 
 public class LocatorActivity extends AppCompatActivity {
@@ -29,12 +33,14 @@ public class LocatorActivity extends AppCompatActivity {
     setContentView(R.layout.activity_locator);
     tv_longitude = findViewById(R.id.tv_longitude);
     tv_latitude = findViewById(R.id.tv_latitude);
-    findViewById(R.id.btn_showLocation).setOnClickListener(view -> getLocation());
     initialItemData(savedInstanceState);
+    findViewById(R.id.btn_showLocation).setOnClickListener(view -> getLocation());
   }
 
   public void getLocation() {
     locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+    // already get the permission to access the location
     locationProvider = LocationManager.GPS_PROVIDER;
     // check the location permission
     if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
@@ -54,9 +60,28 @@ public class LocatorActivity extends AppCompatActivity {
       if (location != null) {
         tv_longitude.setText("Longitude: " + location.getLongitude());
         tv_latitude.setText("Latidude: "+ location.getLatitude());
+      } else {
+        locationManager.requestLocationUpdates(locationProvider, 60000, 0,locationListener);
       }
     }
   }
+
+  public LocationListener locationListener = new LocationListener() {
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras) {
+    }
+    @Override
+    public void onProviderEnabled(String provider) {
+    }
+    @Override
+    public void onProviderDisabled(String provider) {
+    }
+    @Override
+    public void onLocationChanged(Location location) {
+      tv_longitude.setText("Longitude: " + location.getLongitude());
+      tv_latitude.setText("Latidude: "+ location.getLatitude());
+    }
+  };
 
   @Override
   public void onRequestPermissionsResult(
@@ -69,12 +94,14 @@ public class LocatorActivity extends AppCompatActivity {
         // do not have the permission to access the location
         return;
       }
-      // get the permission to access the location
+      // already get the permission to access the location
       locationProvider = LocationManager.GPS_PROVIDER;
       Location location = locationManager.getLastKnownLocation(locationProvider);
       if (location != null) {
         tv_longitude.setText("Longitude: " + location.getLongitude());
         tv_latitude.setText("Latidude: "+ location.getLatitude());
+      } else {
+        locationManager.requestLocationUpdates(locationProvider, 1000, 0,locationListener);
       }
     }
   }
