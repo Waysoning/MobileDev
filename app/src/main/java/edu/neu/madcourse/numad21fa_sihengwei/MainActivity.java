@@ -49,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
       case R.id.btn_locator:
         startActivity(new Intent(this, LocatorActivity.class));
         break;
+      case R.id.btn_service:
+        startActivity(new Intent(this, ServiceActivity.class));
+        break;
     }
   }
 }

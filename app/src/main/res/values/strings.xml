@@ -28,4 +28,9 @@
     <string name="link_collector">Link Collector</string>
     <string name="locator">Locator</string>
     <string name="show_location">Show Location</string>
+    <string name="service">Service</string>
+    <string name="request">Request</string>
+    <string name="city_name">City Name</string>
+    <string name="weather_forcast">Weather Forecast</string>
+    <string name="weather_picture">weather picture</string>
 </resources>
