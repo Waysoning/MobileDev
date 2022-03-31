@@ -1,6 +1,6 @@
 # MobileDev
 
-Practice basic parts of Android Development
+Practice basic skills of Android Development.
 
 - A1 First App
   - Hello World! text
